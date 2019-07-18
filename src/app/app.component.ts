@@ -1,10 +1,28 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: 'app-root',
+  template: `
+    <div>
+      Parent component
+    </div>
+    <app-child *ngFor="let vehicle of vehicles" [car]="vehicle"></app-child>
+  `
 })
-export class AppComponent  {
-  name = 'Angular';
+export class AppComponent {
+  vehicles = [
+    {
+      id: 1,
+      make: 'Toyota'
+    },
+    {
+      id: 2, 
+      make: 'Subaru'
+    },
+    {
+      make: 'VW'
+    },
+    {
+    }
+  ]
 }
